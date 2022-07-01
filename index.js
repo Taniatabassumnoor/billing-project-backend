@@ -2,12 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
-// const authRouter = require("./routerHandler/authHandler");
 const userHandler = require("./routerHandler/userHandler");
 const billingHandler = require("./routerHandler/billingHandler");
-// const userRouter = require("./routers/user");
 
-// const productsRouter = require("./routers/product");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -26,12 +23,9 @@ connectDB();
 app.get("/test", (req, res) => {
   res.send("Hello from Billing Project");
 });
-// app.use("/api/users", userRouter);
+
 app.use("/api", userHandler);
 app.use("/api", billingHandler);
-
-// app.use("/api/products", productsRouter);
-
 // server listen
 app.listen(5000, () => {
   console.log("app is running");
