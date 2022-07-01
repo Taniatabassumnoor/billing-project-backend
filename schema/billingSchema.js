@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const billingSchema = new mongoose.Schema({
   billingId: {
     type: String,
-    required: true,
   },
   fullName: {
     type: String,

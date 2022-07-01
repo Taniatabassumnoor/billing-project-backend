@@ -12,8 +12,9 @@ const {
 // all routes
 router.post("/add-billing", insertBilling);
 router.get("/billing-list", getAllBilling);
-router.get("/billing-list/:billingId", getSingleBilling);
-router.put("/billing-list/:billingId", updateBilling);
-router.delete("/billing-list/:billingId", deleteBilling);
+
+router.get("/billing-list/:id", getSingleBilling);
+router.put("/billing-list/:id", updateBilling);
+router.delete("/billing-list/:id", deleteBilling);
 
 module.exports = router;
